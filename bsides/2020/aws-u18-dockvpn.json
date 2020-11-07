@@ -34,7 +34,7 @@
         },
         {
             "type": "shell",
-            "inline": ["whoami", "pwd", "ip a", "sudo apt-get update -y"]
+            "inline": ["whoami", "pwd", "ip a", "sudo apt-get update", "sudo apt-get upgrade -y"]
         }
     ]
   }
