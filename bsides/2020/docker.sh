@@ -21,4 +21,4 @@ sudo add-apt-repository \
 sudo apt-get update
 
 # Install the latest version of Docker CE and container
-sudo apt-get install -y docker-ce # docker-ce-cli containerd.io (commented bc unable to locate error)
+sudo apt-get install -y docker-ce-cli # docker-ce-cli containerd.io (commented bc unable to locate error)
