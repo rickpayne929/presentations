@@ -10,10 +10,22 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+    echo Bsides2020: Initiating Build Patching AMI step
+    curl "https://releases.hashicorp.com/packer/1.6.5/packer_1.6.5_linux_amd64.zip" -o packer_1.6.5_linux_amd64.zip
+    unzip packer_1.6.5_linux_amd64.zip
+    mv packer /usr/local/bin
+    packer validate .\aws-u20-dockvpn.json
+    packer build packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' .\aws-u20-dockvpn.json
+  displayName: 'Build Patched AMI'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    echo Bsides2020: AMI Swap in ASG Launch Config
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    ./aws/install
+    export AWS_ACCESS_KEY_ID=$(aws_access)
+    export AWS_SECRET_ACCESS_KEY=$(aws_secret)
+    export AWS_DEFAULT_REGION=us-east-1
+    aws s3 ls
+  displayName: 'AMI Swap in ASG Launch Config'
