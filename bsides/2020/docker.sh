@@ -26,3 +26,6 @@ sudo apt install -y docker-ce # docker-ce-cli containerd.io (commented bc unable
 
 # Test
 sudo systemctl status docker
+
+# Group membership update
+sudo usermod -aG docker ${USER}
