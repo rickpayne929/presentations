@@ -13,7 +13,7 @@ steps:
 - script: |
     set -x
     echo ***Bsides2020: Initiating Build Patching AMI step***
-    sudo apt-get install -y tree
+    sudo apt-get install -y tree jq
     curl "https://releases.hashicorp.com/packer/1.6.5/packer_1.6.5_linux_amd64.zip" -o packer_1.6.5_linux_amd64.zip
     unzip packer_1.6.5_linux_amd64.zip
     sudo mv packer /usr/local/bin
@@ -24,11 +24,14 @@ steps:
     cd bsides/2020
     packer validate aws-u18-dockvpn.json
     packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' aws-u18-dockvpn.json
+    NewAMI=$(jq -r '.builds[0].artifact_id|split(":")[1]' ./manifest.json)
+    echo ***Bsides2020: NewAMI variable value is $NewAMI in Build Patching AMI step***
   displayName: 'Build Patched AMI'
 
 - script: |
     set -x
     echo ***Bsides2020: AMI Swap in ASG Launch Config***
+    echo ***Bsides2020: NewAMI variable value is $NewAMI in Build Patching AMI Swap step***
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
     unzip awscliv2.zip
     ./aws/install
@@ -36,4 +39,8 @@ steps:
     export AWS_SECRET_ACCESS_KEY=$(aws_secret)
     export AWS_DEFAULT_REGION=us-east-1
     aws s3 ls
+
+    aws ec2 create-launch-template-version --launch-template-id lt-0abcd290751193123 --version-description $(Build.BuildNumber) --source-version 3 --launch-template-data '{"ImageId":"$NewAMI"}'
+    
+    aws autoscaling start-instance-refresh --cli-input-json file://instance-refresh.json
   displayName: 'AMI Swap in ASG Launch Config'
