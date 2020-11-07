@@ -33,13 +33,16 @@ steps:
     echo ***Bsides2020: AMI Swap in ASG Launch Config***
     echo ***Bsides2020: NewAMI variable value is $NewAMI in Build Patching AMI Swap step***
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    ./aws/install
+    unzip -q awscliv2.zip
+    sudo ./aws/install
     export AWS_ACCESS_KEY_ID=$(aws_access)
     export AWS_SECRET_ACCESS_KEY=$(aws_secret)
     export AWS_DEFAULT_REGION=us-east-1
     aws s3 ls
 
+    cd bsides/2020
+    NewAMI=$(jq -r '.builds[0].artifact_id|split(":")[1]' ./manifest.json)
+    echo ***Bsides2020: NewAMI variable value is $NewAMI in Build Patching AMI Swap step***
     aws ec2 create-launch-template-version --launch-template-id lt-0abcd290751193123 --version-description $(Build.BuildNumber) --source-version 3 --launch-template-data '{"ImageId":"$NewAMI"}'
     
     aws autoscaling start-instance-refresh --cli-input-json file://instance-refresh.json
