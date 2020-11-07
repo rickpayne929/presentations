@@ -30,10 +30,6 @@
             "destination": "/home/ubuntu/"
         },
         {
-          "type": "shell",
-          "script": "./awscli.sh"
-        },
-        {
             "type": "shell",
             "script": "./docker.sh"
         },
@@ -44,6 +40,10 @@
         {
             "type": "shell",
             "inline": ["whoami", "pwd", "ip a", "sudo apt-get update", "sudo apt-get upgrade -y"]
+        },
+        {
+          "type": "shell",
+          "script": "./awscli.sh"
         }
     ],
     "post-processors": [
