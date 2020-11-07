@@ -25,6 +25,15 @@
     ],
     "provisioners": [
         {
+            "type": "file",
+            "source": "./index.html",
+            "destination": "/home/ubuntu/"
+        },
+        {
+          "type": "shell",
+          "script": "./awscli.sh"
+        },
+        {
             "type": "shell",
             "script": "./docker.sh"
         },
@@ -36,6 +45,15 @@
             "type": "shell",
             "inline": ["whoami", "pwd", "ip a", "sudo apt-get update", "sudo apt-get upgrade -y"]
         }
+    ],
+    "post-processors": [
+      [
+        {
+          "output": "manifest.json",
+          "strip_path": true,
+          "type": "manifest"
+        }
+      ]
     ]
   }
   

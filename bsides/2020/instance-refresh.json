@@ -1,0 +1,7 @@
+{
+    "AutoScalingGroupName": "aws-u18-dockvpn",
+    "Preferences": {
+        "InstanceWarmup": 300,
+        "MinHealthyPercentage": 49
+    }
+}
