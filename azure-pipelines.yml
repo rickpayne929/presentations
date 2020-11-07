@@ -19,10 +19,11 @@ steps:
     packer --version
     pwd
     ls -l
+    apt-install -y tree
     tree
     cd bsides/2020
     packer validate aws-u20-dockvpn.json
-    packer build packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' aws-u20-dockvpn.json
+    packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' aws-u20-dockvpn.json
   displayName: 'Build Patched AMI'
 
 - script: |
