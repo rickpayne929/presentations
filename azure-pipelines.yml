@@ -43,7 +43,7 @@ steps:
     cd bsides/2020
     NewAMI=$(jq -r '.builds[0].artifact_id|split(":")[1]' ./manifest.json)
     echo ***Bsides2020: NewAMI variable value is $NewAMI in Build Patching AMI Swap step***
-    aws ec2 create-launch-template-version --launch-template-id lt-0abcd290751193123 --version-description $(Build.BuildNumber) --source-version 3 --launch-template-data '{"ImageId":"$NewAMI"}'
+    aws ec2 create-launch-template-version --launch-template-id lt-08e35b16cb28fb4e7 --version-description $(Build.BuildNumber) --source-version 3 --launch-template-data '{"ImageId":"$NewAMI"}'
     
     aws autoscaling start-instance-refresh --cli-input-json file://instance-refresh.json
   displayName: 'AMI Swap in ASG Launch Config'
