@@ -19,7 +19,7 @@ steps:
     packer --version
     pwd
     ls -l
-    apt-install -y tree
+    apt-get install -y tree
     tree
     cd bsides/2020
     packer validate aws-u20-dockvpn.json
