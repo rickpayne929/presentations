@@ -17,8 +17,9 @@ steps:
     unzip packer_1.6.5_linux_amd64.zip
     sudo mv packer /usr/local/bin
     packer --version
-    pwd 
-    cd -v bsides/2020
+    pwd
+    ls
+    cd presentations/bsides/2020
     packer validate aws-u20-dockvpn.json
     packer build packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' aws-u20-dockvpn.json
   displayName: 'Build Patched AMI'
