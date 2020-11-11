@@ -20,8 +20,8 @@ steps:
     packer --version
     pwd
     ls -l
-    tree
     cd bsides/2020
+    tree
     packer validate aws-u18-dockvpn.json
     packer build -var 'aws_access_key=$(aws_access)' -var 'aws_secret_key=$(aws_secret)' -var 'azdo_build=$(Build.BuildNumber)' aws-u18-dockvpn.json
     NewAMI=$(jq -r '.builds[0].artifact_id|split(":")[1]' ./manifest.json)
