@@ -1,6 +1,6 @@
 # Bsides 2020 Notes
 This page contains my raw notes used to build the demo. 
-![Demo Design](bsides/2020/Bsides2020.jpg)
+![Demo Design](Bsides2020.jpg)
 
 ## Pre-Requisites
 The toolset below was used to prepare and build the demo.
@@ -39,6 +39,7 @@ $ aws ec2 describe-images --image-ids ami-0ea142bd244023692
 #### Useful commands
 ```shell
 $ docker run --name bsides -v /home/ubuntu/index.html:/usr/share/nginx/html/index.html:rw -p 80:80 -d nginx
+$ docker run --name bsides -v /home/ubuntu/nginx:/usr/share/nginx/html:rw -p 80:80 -d nginx
 $ docker images
 $ docker ps
 $ docker top

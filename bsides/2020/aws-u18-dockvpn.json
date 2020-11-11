@@ -28,12 +28,12 @@
         {
             "type": "file",
             "source": "./index.html",
-            "destination": "/home/ubuntu/"
+            "destination": "/home/ubuntu/nginx"
         },
         {
           "type": "file",
           "source": "./Bsides2020.jpg",
-          "destination": "/home/ubuntu/"
+          "destination": "/home/ubuntu/nginx"
       },
         {
             "type": "shell",
