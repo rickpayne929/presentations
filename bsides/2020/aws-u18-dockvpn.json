@@ -53,7 +53,7 @@
         },
         {
           "type": "shell",
-          "inline": ["sed -i 's/replaceme/{{ user `azdo_build` }}/g' /home/ubuntu/index.html"]
+          "inline": ["sed -i 's/replaceme/{{ user `azdo_build` }}/g' /home/ubuntu/nginx/index.html"]
         } 
     ],
     "post-processors": [
