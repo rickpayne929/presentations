@@ -31,6 +31,11 @@
             "destination": "/home/ubuntu/"
         },
         {
+          "type": "file",
+          "source": "./Bsides2020.jpg",
+          "destination": "/home/ubuntu/"
+      },
+        {
             "type": "shell",
             "script": "./docker.sh"
         },

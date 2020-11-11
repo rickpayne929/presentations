@@ -46,4 +46,4 @@ steps:
     aws ec2 create-launch-template-version --launch-template-id lt-08e35b16cb28fb4e7 --version-description $(Build.BuildNumber) --source-version 5 --launch-template-data '{"ImageId":"'$NewAMI'"}'
     
     aws autoscaling start-instance-refresh --cli-input-json file://instance-refresh.json
-  displayName: 'AMI Swap in ASG Launch Config'
+  displayName: 'AMI Swap in ASG Launch Template'
