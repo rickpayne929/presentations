@@ -53,7 +53,7 @@
         },
         {
           "type": "shell",
-          "inline": ["ls -al /home/ubuntu/"]
+          "inline": ["ls -al /home/ubuntu/nginx/", "cat /home/ubuntu/nginx/index.html"]
       },
         {
           "type": "shell",
