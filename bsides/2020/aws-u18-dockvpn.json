@@ -45,12 +45,16 @@
         },
         {
             "type": "shell",
-            "inline": ["whoami", "pwd", "ip a", "sudo apt-get update", "sudo apt-get upgrade -y"]
+            "inline": ["sudo apt-get update", "sudo apt-get upgrade -y"]
         },
         {
           "type": "shell",
           "script": "./awscli.sh"
         },
+        {
+          "type": "shell",
+          "inline": ["ls -al /home/ubuntu/"]
+      },
         {
           "type": "shell",
           "inline": ["sed -i 's/replaceme/{{ user `azdo_build` }}/g' /home/ubuntu/nginx/index.html"]
