@@ -1,7 +1,8 @@
 {
     "variables": {
       "aws_access_key": "",
-      "aws_secret_key": ""
+      "aws_secret_key": "",
+      "azdo_build": ""
     },
     "builders": [
       {
@@ -26,6 +27,20 @@
     "provisioners": [
         {
             "type": "shell",
+            "inline": ["mkdir /home/ubuntu/nginx"]
+        },
+        {
+            "type": "file",
+            "source": "./index.html",
+            "destination": "/home/ubuntu/nginx/"
+        },
+        {
+            "type": "file",
+            "source": "./Bsides2020.jpg",
+            "destination": "/home/ubuntu/nginx/"
+        },
+        {
+            "type": "shell",
             "script": "./docker.sh"
         },
         {
@@ -34,8 +49,29 @@
         },
         {
             "type": "shell",
-            "inline": ["whoami", "pwd", "ip a", "sudo apt-get update", "sudo apt-get upgrade -y"]
+            "inline": ["sudo apt-get update", "sudo apt-get upgrade -y"]
+        },
+        {
+            "type": "shell",
+            "script": "./awscli.sh"
+        },
+        {
+            "type": "shell",
+            "inline": ["ls -al /home/ubuntu/nginx/", "cat /home/ubuntu/nginx/index.html"]
+      },
+        {
+            "type": "shell",
+            "inline": ["sed -i 's/replaceme/{{ user `azdo_build` }}/g' /home/ubuntu/nginx/index.html"]
+        } 
+    ],
+    "post-processors": [
+      [
+        {
+          "output": "manifest.json",
+          "strip_path": true,
+          "type": "manifest"
         }
+      ]
     ]
   }
   
