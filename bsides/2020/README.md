@@ -1,11 +1,53 @@
-# Bsides 2020 Notes
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Bsides 2020 Event Notes](#bsides-2020-event-notes)
+  - [Pre-Requisites](#pre-requisites)
+    - [Visual Studio Code](#visual-studio-code)
+    - [Packer](#packer)
+      - [Useful commands](#useful-commands)
+    - [Docker Desktop](#docker-desktop)
+      - [Useful commands](#useful-commands-1)
+    - [AWS CLI v2](#aws-cli-v2)
+      - [Useful commands](#useful-commands-2)
+    - [Putty](#putty)
+  - [Tooling](#tooling)
+    - [Azure DevOps - Sign in & Create First Project](#azure-devops---sign-in--create-first-project)
+    - [Azure DevOps - First Pipeline](#azure-devops---first-pipeline)
+    - [Azure DevOps - Secrets (IA-1)](#azure-devops---secrets-ia-1)
+    - [AWS - Create Auto Scaling Group (CP-10)](#aws---create-auto-scaling-group-cp-10)
+    - [AWS - Create Launch Tempalte](#aws---create-launch-tempalte)
+    - [AWS - ASG Instance Refresh](#aws---asg-instance-refresh)
+    - [AWS - ASG User Data](#aws---asg-user-data)
+    - [GitHub - Branch Protection](#github---branch-protection)
+    - [Packer - AWS .json](#packer---aws-json)
+ 
+<a name="notes"></a>
+# Bsides 2020 Event Notes
+Presentation (1h52m start) - https://www.youtube.com/watch?v=H5R7MpAjdv8
+![YouTube Start Snippet](images/YouTube_snippet.jpg)
+
+Event Page - https://2020.bsidesorlando.org/
+
+Speaker Profile - https://2020.bsidesorlando.org/#/speakers?lang=en&speakerId=17525000000482016
+
+Session - A journey from DevOps to SECdevOps - Track 2 - Nov 07, 2020 - 03:30 PM - 04:30 PM (EST)
+
+About speaker / talk summary  
+Rick Payne has spent the last 15 years climbing the tech ladder from an Intern to a DevOps technician -> Security Analyst -> Architect -> CSO -> arriving in Silicon Valley, on promotion 10, as a cloud focused Staff Information Security Engineer. His foundation is standards-based and rooted in DevOps automation and Systems Security Engineering (SSE). This climb was facilitated through continuous educational activities including several college degrees(AA, AS, BS, MSc), professional certifications(CISSP, RHCE, RHCSA, AWS-CSA, Sec+), attending various conferences(Bsides, SANS) and workshops, and teaching cybersecurity at local schools(CyberPatriot) and colleges(CyberCamp). He’s building his masterpiece, the Secure Image & Container (SIC) Factory, and is excited to share this journey. The SIC Factory is a global, multi-cloud, heterogeneous, CICD Infrastructure / Security as Code solution. This broad discussion will cover everything from DevSecOps, Vulnerability Management, Maturity Models, Security Frameworks, to Cultural impacts.
+
+Behind the scenes photo  
+![Behind the scenes](images/Officeview.jpg)
+
 This page contains my raw notes used to build the demo. 
 
 Labor Estimates to Date (Blocks includes family activities e.g. bike rides, meal routines, wresting, chore debates, brother fight mediation sessions... ):
-11/6: 5pm - 1am
-11/7: 7am - 3pm
-11/11: 9am - 3pm
-Total ~22h
+- 11/6: 5pm - 1am
+- 11/7: 7am - 3pm
+- 11/11: 9am - 3pm
+- Total ~22h
+
+
+Demo Workflow
 ![Demo Design](Bsides2020.jpg)
 
 ## Pre-Requisites
