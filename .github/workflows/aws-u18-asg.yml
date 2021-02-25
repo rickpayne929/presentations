@@ -1,0 +1,16 @@
+name: aws-u18-asg
+
+# Enable manual run button
+on: workflow_dispatch
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Hello World test
+          run: |
+            echo Hello World
