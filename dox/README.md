@@ -2,6 +2,7 @@
 - [Table of Contents](#table-of-contents)
 - [DevOps Exchange Event Notes](#devops-exchange-event-notes)
 - [Promo](#promo)
+  - [Promo Video](#promo-video)
   - [Flyer 1](#flyer-1)
   - [Flyer 2](#flyer-2)
   - [InfoGraphic](#infographic)
@@ -25,6 +26,9 @@ Rick Payne is a Principal Information Security Engineer at RMS. He’s been to t
 
 # Promo
 
+## Promo Video
+https://twitter.com/TheDoxHub/status/1407350535984979978?s=20
+![Promo Video](promo_frame.jpg)
 ## Flyer 1
 ![Flyer 1](DOX_Flyer_2.jpg)
 ## Flyer 2
