@@ -4,18 +4,18 @@
 - [Sixth Grade Science Experiment - Overview](#sixth-grade-science-experiment---overview)
 - [Week 1 - Virtual machine install](#week-1---virtual-machine-install)
   - [Week 1 Q&A](#week-1-qa)
-  - [Confirm Virtualization Technology is Enabled](#confirm-virtualization-technology-is-enabled)
-  - [Download Ubuntu 20.04.3 LTS .iso](#download-ubuntu-20043-lts-iso)
-  - [Install VMware Player](#install-vmware-player)
-  - [Install Ubuntu 20.04.3 in VMware Workstation Player](#install-ubuntu-20043-in-vmware-workstation-player)
-  - [Configure Resolution](#configure-resolution)
-  - [Power Off the machine](#power-off-the-machine)
+  - [1. Confirm Virtualization Technology is Enabled](#1-confirm-virtualization-technology-is-enabled)
+  - [2. Download Ubuntu 20.04.3 LTS .iso](#2-download-ubuntu-20043-lts-iso)
+  - [3. Install VMware Player](#3-install-vmware-player)
+  - [4. Install Ubuntu 20.04.3 in VMware Workstation Player](#4-install-ubuntu-20043-in-vmware-workstation-player)
+  - [5. Configure Resolution](#5-configure-resolution)
+  - [6. Power Off the machine](#6-power-off-the-machine)
   - [Week 1 Comments](#week-1-comments)
 - [Week 2 - Create User Accounts, Install John the Ripper, Crack Passwords](#week-2---create-user-accounts-install-john-the-ripper-crack-passwords)
   - [Create User Accounts](#create-user-accounts)
   - [Install John the Ripper](#install-john-the-ripper)
   - [Crack Passwords](#crack-passwords)
-    - [Labor Estimates to Date (Blocks includes family activities e.g. bike rides, meal routines, wrestling, chore debates, brother fight mediation sessions... :)](#labor-estimates-to-date-blocks-includes-family-activities-eg-bike-rides-meal-routines-wrestling-chore-debates-brother-fight-mediation-sessions-)
+- [Labor Estimates to Date (Blocks includes family activities e.g. bike rides, meal routines, wrestling, chore debates, brother fight mediation sessions... :)](#labor-estimates-to-date-blocks-includes-family-activities-eg-bike-rides-meal-routines-wrestling-chore-debates-brother-fight-mediation-sessions-)
 
 
 <a name="Overview"></a>
@@ -38,7 +38,7 @@ Q: What are the software requirements for this course?
 A: This guide will be written for Windows 10 and VMware Player; however, Linux and Mac can also run virtual machines using VMware and other desktop hypervisor applications. 
 
 
-## Confirm Virtualization Technology is Enabled
+## 1. Confirm Virtualization Technology is Enabled
 1. Open Task Manager 
     - Keyboard shortcut: (ctrl + shift + esc)
     - Window Key > Type task > Task Manager
@@ -60,13 +60,13 @@ A: This guide will be written for Windows 10 and VMware Player; however, Linux a
       - Example for MSI: https://www.msi.com/faq/nb-1627 
 
 
-## Download Ubuntu 20.04.3 LTS .iso
+## 2. Download Ubuntu 20.04.3 LTS .iso
 1. https://ubuntu.com/download/desktop
 2. Click: Download ![Ubuntu Download Button](images/download_ubuntu.png)
     - The file is 2.9GB. It’ll take around 50 minutes to download at 9Mbps using the default link. I was impatient and went to Princeton’s 20Gbps download here: https://mirror.math.princeton.edu/pub/ubuntu-iso/focal/ This took about 7 minutes hopping between 30 - 60Mbps
 
 
-## Install VMware Player
+## 3. Install VMware Player
 Note: This will require a restart
 1. Download VMware Workstation Player
     - https://www.vmware.com/products/workstation-player.html
@@ -89,7 +89,7 @@ Note: This will require a restart
         - Finish > Yes to restart
 
 
-## Install Ubuntu 20.04.3 in VMware Workstation Player
+## 4. Install Ubuntu 20.04.3 in VMware Workstation Player
 1. Open VMware Workstation Player
    - Windows Key > VMware > Press Enter when VMware Workstation is highlighted ![Window Key - VMware](images/start_vmware.png)
    - Select “Use VMware…” > Continue
@@ -120,7 +120,7 @@ Note: This will require a restart
      - It should take 20-30minutes to complete depending on computer performance ![VMware Ubuntu Complete](images/vmware_ubuntu_complete.png)
 
 
-## Configure Resolution
+## 5. Configure Resolution
 1. Clear the "Online Accounts" screen
    - Log in
    - At the Online Accounts screen
@@ -136,7 +136,7 @@ Note: This will require a restart
    - Click the X to close
 
 
-## Power Off the machine
+## 6. Power Off the machine
 1. At the top right of the screen, Click the Power drop down > Power Off / Log Out > Power Off… > Power Off ![Ubuntu Power Off](images/ubuntu_poweroff.png)
 
 ## Week 1 Comments
@@ -159,6 +159,6 @@ I see the local virtualization path as foundational. It offers the beginning lea
 ## Crack Passwords
 
 
-### Labor Estimates to Date (Blocks includes family activities e.g. bike rides, meal routines, wrestling, chore debates, brother fight mediation sessions... :)
+# Labor Estimates to Date (Blocks includes family activities e.g. bike rides, meal routines, wrestling, chore debates, brother fight mediation sessions... :)
 - 10/9: ~3h to draft VM Install Steps
 - 10/16: 11am - 2pm to Prepare Installation for Peer Review in this README.md
