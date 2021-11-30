@@ -218,13 +218,16 @@ I see the local virtualization path as foundational. It offers the beginning lea
    - ![Ubuntu Term JtR Alias](images/ubuntu_term_jtr_alias.jpg)
 2. Benchmark Machine - Single CPU
    - In the terminal, type: john --test > Press: Enter ![Ubuntu Term JtR Test](images/ubuntu_term_jtr_test2.jpg)
+   - You can note the descrypt number (4748k) in "Many salts: 4748k c/s" 
 3. Benchmark Machine - All CPUs
-   - In the terminal, type: john-multi --test > Press: Enter ![Ubuntu Term JtR Test](images/ubuntu_term_jtr_test_multi.jpg)
+   - In the terminal, type: john-multi --test > Press: Enter
+   - Press Ctrl + C once to quit at any time ![Ubuntu Term JtR Test](images/ubuntu_term_jtr_test_multi.jpg)
+   - You can note the descrypt number (4748k) in "Many salts: 4748k c/s" 
 
 
 ## Combine System Password Files
 1. Combine Password Files
-   - In the terminal, type: sudo john unshadow /etc/passwd /etc/shadow > system_passwords.txt > Press: Enter > Enter password created in Week 1, Section 4
+   - In the terminal, type: sudo unshadow /etc/passwd /etc/shadow > system_passwords.txt > Press: Enter > Enter password created in Week 1, Section 4
 2. Format Password Hash File
    - In the terminal, type: sed 's/:100.*//' system_passwords.txt | grep password > filtered_passwords.txt > Press: Enter 
 3. Confirm Password File Unshadow
